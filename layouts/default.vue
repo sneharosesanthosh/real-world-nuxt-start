@@ -10,6 +10,19 @@ import NavBar from '~/components/NavBar.vue'
 export default {
   components: {
     NavBar
+  },
+  head() {
+    // head() is a property used by vue-meta.
+    return {
+      pageTitleFormat: '%s - Real World Events',
+      meta: [
+        {
+          hid: 'Description',
+          name: 'Description',
+          content: 'These are the events taking place in the neighbourhood'
+        }
+      ]
+    }
   }
 }
 </script>
