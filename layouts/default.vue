@@ -14,7 +14,7 @@ export default {
   head() {
     // head() is a property used by vue-meta.
     return {
-      pageTitleTemplate: '%s - Real World Events',
+      titleTemplate: '%s - Real World Events',
       meta: [
         {
           hid: 'Description',
