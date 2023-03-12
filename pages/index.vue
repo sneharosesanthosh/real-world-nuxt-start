@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue'
+import EventCard from '/Users/sneha/Desktop/Nuxt js/real-world-nuxt-lesson-4-seo-start/components/EventCard.vue'
 export default {
   async asyncData(context) {
     try { 
