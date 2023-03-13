@@ -5,7 +5,7 @@
   "author": "Gregg Pollack",
   "private": true,
   "scripts": {
-    "dev": "nuxt & json-server --watch hai.json",
+    "dev": "nuxt & json-server --watch db.json --delay 500",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
