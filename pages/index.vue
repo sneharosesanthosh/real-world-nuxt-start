@@ -6,22 +6,21 @@
 </template>
 
 <script>
-import EventCard from '/Users/sneha/Desktop/Nuxt js/real-world-nuxt-lesson-4-seo-start/components/EventCard.vue'
+import EventCard from '@/components/EventCard.vue'
+import { mapState } from 'vuex'
+
 export default {
-  async asyncData(context) {
-    try { 
-      const {data} = await context.$axios.get('http://localhost:3000/events')
-      return {
-        events: data,
-      }
-    }
-    catch(e) {
+  async fetch({store,error}) {
+    try {
+      await store.dispatch('event/fetchEvents')
+    } 
+    catch (e) {
       error({
-            statusCode: 503,
-            message: "Unable to fetch events data at this time.Please try again later."
-          })
+        statusCode: 503,
+        message:
+          'Unable to fetch events data at this time.Please try again later.',
+      })
     }
-   
   },
   head() {
     // head() is a property used by vue-meta.
@@ -38,6 +37,11 @@ export default {
   },
   components: {
     EventCard,
+  },
+  computed: {
+    ...mapState({
+      events: (state) => state.event.events,
+    }),
   },
 }
 </script>
